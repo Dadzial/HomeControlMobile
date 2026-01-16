@@ -3,12 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import AddModal from '../modals/AddModal';
 
+const Stack = createStackNavigator();
+
 export type HomeStackParamList = {
     HomeScreen: undefined;
     AddModal: undefined;
 };
-
-const Stack = createStackNavigator();
 
 export default function HomeStack() {
     return (
