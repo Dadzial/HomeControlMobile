@@ -1,36 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AddDevice from '../components/AddDevice';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
-
-interface Device {
-    id: number;
-    name: string;
-    room: string;
-    command?: string;
-    color?: string;
-}
+import { useDevices } from '../store/UseDevices'
 
 export default function HomeScreen() {
-    const [devices, setDevices] = useState<Device[]>([]);
-
-    useEffect(() => {
-        const fetchDevices = async () => {
-            const stored = await AsyncStorage.getItem('devices');
-            const parsed: Device[] = stored ? JSON.parse(stored) : [];
-            setDevices(parsed);
-        };
-
-        fetchDevices();
-    }, []);
-
-    const removeDevice = async (id: number) => {
-        const filtered = devices.filter(d => d.id !== id);
-        setDevices(filtered);
-        await AsyncStorage.setItem('devices', JSON.stringify(filtered));
-    };
+    const { devices, removeDevice } = useDevices();
 
     return (
         <SafeAreaView edges={['left', 'right', 'bottom']} style={styles.safeArea}>
