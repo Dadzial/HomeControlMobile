@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, SafeAreaView, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AddDevice from '../components/AddDevice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Ionicons } from '@expo/vector-icons';
@@ -32,7 +33,7 @@ export default function HomeScreen() {
     };
 
     return (
-        <SafeAreaView style={styles.safeArea}>
+        <SafeAreaView edges={['left', 'right', 'bottom']} style={styles.safeArea}>
             <ScrollView contentContainerStyle={styles.scrollContainer}>
                 <View style={styles.grid}>
                     <AddDevice />
@@ -54,7 +55,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
     safeArea: { flex: 1, backgroundColor: '#232632' },
-    scrollContainer: { flexGrow: 1, padding: 10 },
+    scrollContainer: { flexGrow: 1, padding: 10},
     grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start' },
     tile: {
         width: '30%',

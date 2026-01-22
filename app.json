@@ -4,11 +4,11 @@
     "slug": "HomeControlMobile",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/app-icon.png",
+    "icon": "./assets/app-ico.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/app-icon.png",
+      "image": "./assets/app-ico.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/app-icon.png",
+        "foregroundImage": "./assets/app-ico.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,

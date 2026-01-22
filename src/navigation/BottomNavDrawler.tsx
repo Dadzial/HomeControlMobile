@@ -21,6 +21,9 @@ export default function BottomNavDrawler() {
                     </View>
                 ),
                 headerTitleAlign: 'center',
+                headerTitleContainerStyle: {
+                    paddingTop: 20,
+                },
                 headerBackground: () => (
                     <View style={{
                         flex: 1,
@@ -31,6 +34,7 @@ export default function BottomNavDrawler() {
                 ),
                 headerStyle: {
                     backgroundColor: '#232632',
+                    height:110,
                 },
                 tabBarStyle: {
                     backgroundColor: '#232632',
